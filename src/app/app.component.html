@@ -1,0 +1,27 @@
+<div class="coded-container navbar-wrapper">
+  <nav class="navbar header-navbar pcoded-header" header-theme="theme4">
+    <div class="navbar-wrapper">
+      <div class="navbar-container">
+        <app-header-navigation *ngIf="persistanceService.isAuthenticated()"></app-header-navigation>
+      </div>
+    </div>
+  </nav>
+  <div class="coded-main-container">
+    <div class="coded-wrapper">
+      <div class="coded-content">
+        <div class="coded-inner-content">
+          <div class="main-body">
+            <div class="page-wrapper">
+              <div class="page-body">
+                <router-outlet></router-outlet>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-progress [positionUsing]="'marginLeft'" [direction]="'leftToRightIncreased'" [color]="'#FFFFFF'" [trickleSpeed]="500"
+  [thick]="true" [ease]="'easeInSine'">
+</ng-progress>

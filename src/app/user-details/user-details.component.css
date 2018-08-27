@@ -1,0 +1,16 @@
+.fa-automobile:before, .fa-car:before {
+    content: "\f1b9";
+    color: #1A9CB0;
+}
+
+.fa-spin1.fa-car:before{
+    color:#4AB01A !important;
+}
+
+.car.carSize{
+    height: 87px;
+    margin-left: -2rem;
+}
+.car-info{
+    border-bottom: 1px solid #ddd;
+}

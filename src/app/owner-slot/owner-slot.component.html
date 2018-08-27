@@ -1,0 +1,41 @@
+<!-- <div>
+  <mat-form-field class="pull-right">
+    <input matInput #ref [matDatepicker]="picker"  [(ngModel)]="filterDate"  placeholder="filter by date" (dateInput)="FilterByDate(ref.value)">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</div> -->
+<label for="firstName" style="font-weight: bold;float: left;">{{user.firstName}}, {{ user.lastName}}</label>
+&nbsp;&nbsp;EmpId: &nbsp;<label for="id" style="font-weight: bold;float: righht;">{{user.userId}}</label>
+<br/>
+<label for="email">{{user.email}}</label>
+<br/>
+
+<div class="row">
+  <div class="col-xs-12">
+    <p style="font-weight: bold;">Please select the leave duration...</p>
+  </div>
+</div>
+<div class="row margin-t-10">
+  <div class="col-xs-3">
+    <label>Start Date</label>
+  </div>
+  <div class="col-xs-6">
+    <input matInput #ref [matDatepicker]="picker1"  [(ngModel)]="filterDate"  placeholder="filter by date" (dateInput)="FilterByDate(ref.value)">
+    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+  </div>
+</div>
+<div class="row margin-t-10">
+  <div class="col-xs-3">
+    <label>End Date</label>
+  </div>
+  <div class="col-xs-6">
+    <input matInput #ref [matDatepicker]="picker2"  [(ngModel)]="filterDate1"  placeholder="filter by date" (dateInput)="FilterByDate(ref.value)">
+    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2></mat-datepicker>
+  </div>
+</div>
+<div class="margin-t-10">
+    <button class="btn btn-success" (click)="Release()">Release</button>
+</div>

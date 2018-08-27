@@ -1,0 +1,257 @@
+
+.carslot {
+    margin: 20px auto;
+    /* max-width: 415px; */
+}
+.fuselage {
+    /* border: 5px solid #d8d8d8; */
+    /*border-left: 5px solid #d8d8d8;*/
+}
+
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.seats {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+.seat {
+    /* display: flex; */
+    /* flex: 0 0 14.28571428571429%; */
+    padding: 5px;
+    position: relative;
+    width: 145px;
+    height: 100px;
+}
+
+    .seat:nth-child(1), .seat:nth-child(3), .seat:nth-child(5) {
+        margin-right: 5.285714%;
+    }
+
+    .seat input[type=checkbox] {
+        position: absolute;
+        /* opacity: 0; */
+    }
+    /* .seat input[type=checkbox]:checked + label img{
+        background:url('assets/images/car-red.png') no-repeat center center fixed;
+
+    } */
+        .seat input[type=checkbox]:checked + label {
+            /* background: #CB2323; */
+            -webkit-animation-name: rubberBand;
+            animation-name: rubberBand;
+            animation-duration: 300ms;
+            animation-fill-mode: both;
+        }
+
+        .seat input[type=checkbox]:disabled + label {
+            /* background: #dddddd;
+            text-indent: -9999px; */
+            overflow: hidden;
+        }
+
+            .seat input[type=checkbox]:disabled + label:after {
+                content: "";
+                text-indent: 0;
+                position: absolute;
+                top: 4px;
+                left: 50%;
+                transform: translate(-50%, 0%);
+            }
+
+            .seat input[type=checkbox]:disabled + label:hover {
+                box-shadow: none;
+                cursor: not-allowed;
+                transition: none;
+            }
+            label .trannsient:hover {
+                box-shadow: none;
+                cursor: not-allowed;
+                transition-property: none !important;
+                transition-duration: 0s !important;
+                transition-timing-function: ease !important;
+                transition-delay: 0s !important;
+            }
+
+    .seat label {
+        display: block;
+        position: relative;
+        /* width: 72px; */
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1.5rem;
+        padding: 4px 0;
+        /* background: #A3C644; */
+        border-radius: 5px;
+        animation-duration: 300ms;
+        animation-fill-mode: both;
+        /* height: 50px; */
+    }
+
+        .seat label:before {
+            content: "";
+            position: absolute;
+            width: 75%;
+            height: 75%;
+            top: 1px;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            /* background: rgba(255, 255, 255, 0.4); */
+            border-radius: 3px;
+        }
+
+        .seat label:hover {
+            cursor: pointer;
+            /* box-shadow: 0 0 0px 2px #5C6AFF; */
+            /* transition: 0.70s;
+  -webkit-transition: 0.70s;
+  -moz-transition: 0.70s;
+  -ms-transition: 0.70s;
+  -o-transition: 0.70s;
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360eg); */
+        }
+
+@-webkit-keyframes rubberBand {
+    0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    40% {
+        -webkit-transform: scale3d(0.75, 1.25, 1);
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.15, 0.85, 1);
+        transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+        -webkit-transform: scale3d(0.95, 1.05, 1);
+        transform: scale3d(0.95, 1.05, 1);
+    }
+
+    75% {
+        -webkit-transform: scale3d(1.05, 0.95, 1);
+        transform: scale3d(1.05, 0.95, 1);
+    }
+
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes rubberBand {
+    0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    40% {
+        -webkit-transform: scale3d(0.75, 1.25, 1);
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.15, 0.85, 1);
+        transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+        -webkit-transform: scale3d(0.95, 1.05, 1);
+        transform: scale3d(0.95, 1.05, 1);
+    }
+
+    75% {
+        -webkit-transform: scale3d(1.05, 0.95, 1);
+        transform: scale3d(1.05, 0.95, 1);
+    }
+
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.rubberBand {
+    -webkit-animation-name: rubberBand;
+    animation-name: rubberBand;
+}
+.card-block{
+    padding: 0;
+}
+.seat:nth-child(1) img, .seat:nth-child(3) img, .seat:nth-child(5) img{
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+.carlayout{
+text-align:center;margin:0 1rem 0 2rem;
+}
+
+.bgGray{
+    background: #dadada;
+}
+.nav-right{
+    float: right;
+}
+.carSize {
+    max-height: 50px;
+}
+span.row_block {
+    font-size: 16px;
+    font-weight: bold;
+    color: #dc43ec;
+}
+span.row_num {
+    font-size: 16px;
+    font-weight: bold;
+    color: #140fea;
+}
+.timer{
+    color: #CB2323;
+    font-size: 12px;
+}
+.timer[_ngcontent-c5] {
+    color: #CB2323;
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.booked {
+    background: url("../../assets/images/car-yellow.png")
+}
+
+.open {
+    background: url("../../assets/images/car.png")
+}
+
+.dedicated {
+    background: url("../../assets/images/dedicated.png")
+}
+
+.notavailable {
+    background: url("../../assets/images/disabled.png")
+}

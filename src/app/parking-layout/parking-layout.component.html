@@ -1,0 +1,352 @@
+<div class="carlayout">
+  <ol class="cabin fuselage">
+    <li class="row row--1" *ngFor="let item of totalCars; index as i" [ngSwitch]="i % 6">
+      <ol class="seats" type="A">
+        <li class="seat col-sm-2" *ngSwitchCase="0">
+          <input type="checkbox" id="{{i}}A" data-toggle="tooltip" data-placement="top" title="Tooltip on top" *ngIf="totalCars[i+1]">
+          <label for="{{i}}A" *ngIf="totalCars[i+1]">
+            <img src="assets/images/{{ setImage(item.Status) }}.png" alt="User-Profile-Image"
+              class="carSize" (click)="selectedParking(i+1)">
+            <span class="row_num">{{i+1}}</span>
+            <span class="row_block">A</span>
+          </label>
+          <span class="timer" *ngIf="totalCars[i+1]">12:46:20 AM</span>
+        </li>
+        <li class="seat col-sm-2" *ngSwitchCase="0">
+          <input type="checkbox" id="{{i}}B" *ngIf="totalCars[i+2]">
+          <label for="{{i}}B" *ngIf="totalCars[i+2]">
+            <img src="assets/images/{{ setImage(item.Status) }}.png" alt="User-Profile-Image" (click)="selectedParking(i+2)" class="carSize">
+            <span class="row_num">{{i+2}}</span>
+            <span class="row_block">B</span>
+          </label>
+        </li>
+        <li class="seat col-sm-2" *ngSwitchCase="0">
+          <input type="checkbox" id="{{i}}C" *ngIf="totalCars[i+3]">
+          <label for="{{i}}C" *ngIf="totalCars[i+3]">
+            <img src="assets/images/{{ setImage(item.Status) }}.png" alt="User-Profile-Image" (click)="selectedParking(i+3)" class="carSize">
+            <span class="row_num">{{i+3}}</span>
+            <span class="row_block">C</span>
+          </label>
+        </li>
+        <li class="seat col-sm-2" *ngSwitchCase="0">
+          <input type="checkbox" id="{{i}}D" *ngIf="totalCars[i+4]">
+          <label for="{{i}}D" *ngIf="totalCars[i+4]">
+            <img src="assets/images/{{ setImage(item.Status) }}.png" alt="User-Profile-Image" (click)="selectedParking(i+4)" class="carSize">
+            <span class="row_num">{{i+4}}</span>
+            <span class="row_block">D</span>
+          </label>
+        </li>
+        <li class="seat col-sm-2" *ngSwitchCase="0">
+          <input type="checkbox" id="{{i}}E" *ngIf="totalCars[i+5]">
+          <label for="{{i}}E" *ngIf="totalCars[i+5]">
+            <img src="assets/images/{{ setImage(item.Status) }}.png" alt="User-Profile-Image" (click)="selectedParking(i+5)" class="carSize">
+            <span class="row_num">{{i+5}}</span>
+            <span class="row_block">E</span>
+          </label>
+        </li>
+        <li class="seat col-sm-2" *ngSwitchCase="0">
+          <input type="checkbox" id="{{i}}F" *ngIf="totalCars[i+6]">
+          <label for="{{i}}F" *ngIf="totalCars[i+6]">
+            <img src="assets/images/{{ setImage(item.Status) }}.png" alt="User-Profile-Image" (click)="selectedParking(i+6)" class="carSize">
+            <span class="row_num">{{i+6}}</span>
+            <span class="row_block">F</span>
+          </label>
+        </li>
+        <!-- <li class="seat col-sm-2" *ngSwitchCase="0">
+                <input type="checkbox" id="1E" *ngIf="totalCars[i+5]">
+                <label for="1E" *ngIf="totalCars[i+5]"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">{{i+5}}</label>
+              </li> -->
+      </ol>
+    </li>
+    <!--
+      <li class="row row--2">
+        <ol class="seats" type="A">
+          <li class="seat">
+            <input type="checkbox" id="2A">
+            <label for="2A"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">2A</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="2B">
+            <label for="2B"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">2B</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="2C">
+            <label for="2C"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">2C</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="2D">
+            <label for="2D"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">2D</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="2E">
+            <label for="2E"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">2E</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="2F">
+            <label for="2F"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">2F</label>
+          </li>
+          <li class="seat">
+              <input type="checkbox" id="2G">
+              <label for="2G"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">2G</label>
+            </li>
+        </ol>
+      </li>
+      <li class="row row--3">
+        <ol class="seats" type="A">
+          <li class="seat">
+            <input type="checkbox" id="3A">
+            <label for="3A"><img src="assets/images/car-red.png" alt="User-Profile-Image" class="carSize">3A</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="3B">
+            <label for="3B"><img src="assets/images/car-yellow.png" alt="User-Profile-Image" class="carSize trannsient">3B</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="3C">
+            <label for="3C"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">3C</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="3D">
+            <label for="3D"><img src="assets/images/car-yellow.png" alt="User-Profile-Image" class="carSize trannsient">3D</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="3E">
+            <label for="3E"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">3E</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="3F">
+            <label for="3F"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">3F</label>
+          </li>
+          <li class="seat">
+              <input type="checkbox" id="3G">
+              <label for="3G"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">3G</label>
+            </li>
+        </ol>
+      </li>
+      <li class="row row--4">
+        <ol class="seats" type="A">
+          <li class="seat">
+            <input type="checkbox" id="4A">
+            <label for="4A"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">4A</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="4B">
+            <label for="4B"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">4B</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="4C">
+            <label for="4C"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">4C</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="4D">
+            <label for="4D"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">4D</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="4E">
+            <label for="4E"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">4E</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="4F">
+            <label for="4F"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">4F</label>
+          </li>
+          <li class="seat">
+              <input type="checkbox" id="4G">
+              <label for="4G"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">4G</label>
+            </li>
+        </ol>
+      </li>
+      <li class="row row--5">
+        <ol class="seats" type="A">
+          <li class="seat">
+            <input type="checkbox" id="5A">
+            <label for="5A"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">5A</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="5B">
+            <label for="5B"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">5B</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="5C">
+            <label for="5C"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">5C</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="5D">
+            <label for="5D"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">5D</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="5E">
+            <label for="5E"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">5E</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="5F">
+            <label for="5F"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">5F</label>
+          </li>
+          <li class="seat">
+              <input type="checkbox" id="5G">
+              <label for="5G"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">5G</label>
+            </li>
+        </ol>
+      </li>
+      <li class="row row--6">
+        <ol class="seats" type="A">
+          <li class="seat">
+            <input type="checkbox" id="6A">
+            <label for="6A"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">6A</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="6B">
+            <label for="6B"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">6B</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="6C">
+            <label for="6C"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">6C</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="6D">
+            <label for="6D"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">6D</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="6E">
+            <label for="6E"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">6E</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="6F">
+            <label for="6F"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">6F</label>
+          </li>
+          <li class="seat">
+              <input type="checkbox" id="6G">
+              <label for="6G"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">6G</label>
+            </li>
+        </ol>
+      </li>
+      <li class="row row--7">
+        <ol class="seats" type="A">
+          <li class="seat">
+            <input type="checkbox" id="7A">
+            <label for="7A"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">7A</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="7B">
+            <label for="7B"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">7B</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="7C">
+            <label for="7C"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">7C</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="7D">
+            <label for="7D"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">7D</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="7E">
+            <label for="7E"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">7E</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="7F">
+            <label for="7F"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">7F</label>
+          </li>
+          <li class="seat">
+              <input type="checkbox" id="7G">
+              <label for="7F"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">7G</label>
+            </li>
+        </ol>
+      </li>
+       
+      <li class="row row--8">
+        <ol class="seats" type="A">
+          <li class="seat">
+            <input type="checkbox" id="8A">
+            <label for="8A"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">8A</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="8B">
+            <label for="8B"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">8B</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="8C">
+            <label for="8C"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">8C</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="8D">
+            <label for="8D"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">8D</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="8E">
+            <label for="8E"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">8E</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="8F">
+            <label for="8F"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">8F</label>
+          </li>
+          <li class="seat">
+              <input type="checkbox" id="8G">
+              <label for="8F"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">8G</label>
+            </li>
+        </ol>
+      </li>
+      <li class="row row--9">
+        <ol class="seats" type="A">
+          <li class="seat">
+            <input type="checkbox" id="9A">
+            <label for="9A"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">9A</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="9B">
+            <label for="9B"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">9B</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="9C">
+            <label for="9C"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">9C</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="9D">
+            <label for="9D"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">9D</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="9E">
+            <label for="9E"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">9E</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="9F">
+            <label for="9F"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">9F</label>
+          </li>
+          <li class="seat">
+              <input type="checkbox" id="9G">
+              <label for="9G"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">9G</label>
+            </li>
+        </ol>
+      </li>
+      <li class="row row--10">
+        <ol class="seats" type="A">
+          <li class="seat">
+            <input type="checkbox" id="10A">
+            <label for="10A"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">10A</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="10B">
+            <label for="10B"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">10B</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="10C">
+            <label for="10C"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">10C</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="10D">
+            <label for="10D"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">10D</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="10E">
+            <label for="10E"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">10E</label>
+          </li>
+          <li class="seat">
+            <input type="checkbox" id="10F">
+            <label for="10F"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">10F</label>
+          </li>
+          <li class="seat">
+              <input type="checkbox" id="10G">
+              <label for="10G"><img src="assets/images/car.png" alt="User-Profile-Image" class="carSize">10G</label>
+            </li>
+        </ol>
+      </li> -->
+  </ol>
+</div>
